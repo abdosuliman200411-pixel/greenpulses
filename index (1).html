@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GreenPulse — Your Farm, Smarter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6faf5;--surface:#fff;--text:#0f2a1d;--muted:#51675a;--g1:#16a34a;--g2:#0b6b3a;--lime:#84cc16;--line:#dbe8dc;--hero:linear-gradient(160deg,#eaf7e8,#f6faf5 60%);--shadow:0 20px 50px -20px rgba(11,107,58,.35);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07140d;--surface:#0f2218;--text:#e8f5ec;--muted:#9bb5a3;--g1:#34d399;--g2:#10b981;--lime:#a3e635;--line:#1d3a2a;--hero:linear-gradient(160deg,#0c2417,#07140d 60%);--shadow:0 20px 50px -20px rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#07140d;--surface:#0f2218;--text:#e8f5ec;--muted:#9bb5a3;--g1:#34d399;--g2:#10b981;--lime:#a3e635;--line:#1d3a2a;--hero:linear-gradient(160deg,#0c2417,#07140d 60%);--shadow:0 20px 50px -20px rgba(0,0,0,.7);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg)}
+body{font-family:'Tajawal',Tahoma,Arial,sans-serif;color:var(--text);line-height:1.8;overflow-x:hidden}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.3px}
+.logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--g1),var(--lime));display:grid;place-items:center;font-style:normal;font-size:18px;animation:pulse 2.4s infinite}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;transition:.2s}nav a:hover{color:var(--g1)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:999px;background:linear-gradient(135deg,var(--g2),var(--g1));color:#fff;font-weight:700;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 10px 25px -10px var(--g1);transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line);box-shadow:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}50%{box-shadow:0 0 0 10px rgba(34,197,94,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes drop{0%{transform:translateY(-20px);opacity:0}20%{opacity:1}100%{transform:translateY(120px);opacity:0}}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes dash{to{stroke-dashoffset:0}}
+@keyframes flow{to{background-position:-200% 0}}
+.hero{background:var(--hero);padding:70px 0 90px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-block;padding:6px 16px;border-radius:999px;background:color-mix(in srgb,var(--g1) 14%,transparent);color:var(--g1);font-weight:700;font-size:14px;margin-bottom:18px}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.2;font-weight:800;margin-bottom:18px}
+h1 span{background:linear-gradient(90deg,var(--g1),var(--lime),var(--g1));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 5s linear infinite}
+.lead{color:var(--muted);font-size:18px;max-width:540px;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:30px;margin-top:38px;flex-wrap:wrap}
+.stats b{display:block;font-size:28px;color:var(--g1)}.stats small{color:var(--muted)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;background:var(--lime);width:320px;height:320px;top:-80px;left:-80px;animation:float 9s infinite}
+.phone-area{position:relative;display:grid;place-items:center;min-height:520px}
+.phone{width:260px;border-radius:38px;background:var(--surface);border:8px solid #0f2a1d;box-shadow:var(--shadow);padding:18px 14px;animation:float 6s ease-in-out infinite;position:relative}
+.phone .notch{width:80px;height:6px;border-radius:9px;background:#0f2a1d;margin:-6px auto 12px}
+.phone h4{font-size:15px;margin-bottom:10px}
+.ring{position:relative;width:130px;height:130px;margin:6px auto 12px}
+.ring svg{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11;stroke-linecap:round}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--g1);stroke-dasharray:314;stroke-dashoffset:314;animation:dash 2.2s .6s forwards;--v:0}
+.ring div{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-weight:800;font-size:26px;line-height:1.1}
+.ring small{display:block;font-size:11px;font-weight:500;color:var(--muted)}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.mini div{background:var(--bg);border-radius:14px;padding:8px 10px;font-size:12px;color:var(--muted)}.mini b{display:block;color:var(--text);font-size:17px}
+.zone{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:12px;padding:8px 12px;font-size:13px;margin-top:6px}
+.dot{width:9px;height:9px;border-radius:50%;background:#22c55e;display:inline-block;margin-inline-start:6px;animation:pulse 2s infinite}.dot.r{background:#ef4444;animation:none}
+.chip{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:13px;font-weight:700;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite}
+.c1{top:50px;right:-10px}.c2{bottom:90px;left:-14px;animation-delay:1.5s}.c3{top:210px;left:-30px;animation-delay:.7s}
+.drops span{position:absolute;font-size:22px;animation:drop 3s infinite}
+section{padding:90px 0}
+.head{text-align:center;max-width:640px;margin:0 auto 50px}
+.head h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}.head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:28px;transition:.3s}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--g1)}
+.ico{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:28px;background:color-mix(in srgb,var(--g1) 14%,transparent);margin-bottom:16px}
+.card h3{margin-bottom:6px;font-size:20px}.card p{color:var(--muted);font-size:15px}
+.modes .card{position:relative;overflow:hidden}
+.modes .n{position:absolute;top:-10px;left:14px;font-size:90px;font-weight:800;color:var(--g1);opacity:.1}
+.modes svg{width:100%;height:90px;margin-top:14px}
+.alt{background:color-mix(in srgb,var(--g1) 5%,var(--bg))}
+.flow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 20px;text-align:center;min-width:140px}
+.step span{font-size:30px;display:block}
+.arrow{font-size:22px;color:var(--g1);animation:float 2s infinite}
+.field{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.field svg{width:100%;max-width:460px;margin:auto;display:block}
+.plant{transform-origin:50% 100%;animation:sway 4s ease-in-out infinite}
+.dl{background:linear-gradient(135deg,#0b3d2e,#16a34a);color:#fff;border-radius:36px;padding:60px 30px;text-align:center;position:relative;overflow:hidden}
+.dl h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px}.dl p{opacity:.85;max-width:520px;margin:0 auto 30px}
+.stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.store{display:flex;align-items:center;gap:12px;padding:12px 24px;border-radius:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;min-width:200px;cursor:not-allowed;text-align:right;position:relative}
+.store span{font-size:32px}.store small{display:block;opacity:.8;font-size:12px;line-height:1.3}.store b{font-size:18px}
+.soon{position:absolute;top:-10px;left:12px;background:var(--lime);color:#0b3d2e;font-size:11px;font-weight:800;padding:2px 10px;border-radius:99px}
+footer{padding:36px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:14px}
+footer b{color:var(--g1)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media (max-width:820px){.hero .wrap,.field{grid-template-columns:1fr}nav ul{display:none}.phone-area{min-height:480px}.c1{right:0}.c2{left:0}.c3{left:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<div class="logo"><i>🌱</i>GreenPulse</div>
+<ul><li><a href="#features">المميزات</a></li><li><a href="#irrigation">الري الذكي</a></li><li><a href="#how">كيف تعمل</a></li><li><a href="#download">التحميل</a></li></ul>
+<a class="btn" href="#download">حمّل التطبيق</a>
+</div></nav>
+
+<header class="hero">
+<div class="blob"></div>
+<div class="wrap">
+<div>
+<span class="tag">🌿 منظومة ذكية لإدارة المزارع</span>
+<h1>مزرعتك أذكى مع <span>GreenPulse</span></h1>
+<p class="lead">تابع أرضك ومناطقك الزراعية وأجهزتك من مكان واحد، وخذ قراراتك بناءً على بيانات حقيقية من مزرعتك، مش تخمين.</p>
+<div class="cta"><a class="btn" href="#download">حمّل التطبيق ⬇</a><a class="btn ghost" href="#features">اكتشف المزيد</a></div>
+<div class="stats"><div><b>3</b><small>أوضاع للري</small></div><div><b>24/7</b><small>مراقبة مستمرة</small></div><div><b>∞</b><small>مزارع ومناطق</small></div></div>
+</div>
+<div class="phone-area">
+<div class="drops"><span style="top:30px;right:30%">💧</span><span style="top:10px;right:55%;animation-delay:1.2s">💧</span><span style="top:20px;right:75%;animation-delay:2s">💧</span></div>
+<div class="phone"><div class="notch"></div>
+<h4>🌾 مزرعة الوادي</h4>
+<div class="ring"><svg width="130" height="130" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="50"/><circle class="fg" cx="60" cy="60" r="50" style="stroke-dashoffset:94"/></svg><div><span>70%<small>رطوبة التربة</small></span></div></div>
+<div class="mini"><div>🌡️ الحرارة<b>26°</b></div><div>💧 رطوبة الهواء<b>58%</b></div></div>
+<div class="zone"><span>المنطقة أ — ري تلقائي</span><i class="dot"></i></div>
+<div class="zone"><span>البيت المحمي — تبريد</span><i class="dot"></i></div>
+<div class="zone"><span>حساس المنطقة ج</span><i class="dot r"></i></div>
+</div>
+<div class="chip c1">💦 الري يعمل</div><div class="chip c2">🟢 12 جهاز متصل</div><div class="chip c3">🔔 تنبيه: رطوبة منخفضة</div>
+</div>
+</div>
+</header>
+
+<section id="features"><div class="wrap">
+<div class="head rv"><h2>كل ما تحتاجه لإدارة مزرعتك</h2><p>بدل القيم التقنية المعقدة، تشوف معلومات واضحة ومفهومة في أي وقت.</p></div>
+<div class="grid">
+<div class="card rv"><div class="ico">🏡</div><h3>عدة مزارع بحساب واحد</h3><p>أنشئ وأدر أكثر من مزرعة، وقسّم كل مزرعة لمناطق زراعية (Zones).</p></div>
+<div class="card rv"><div class="ico">📡</div><h3>حساسات في كل منطقة</h3><p>رطوبة التربة، درجة الحرارة ورطوبة الهواء، كل منطقة بحساساتها وأجهزتها.</p></div>
+<div class="card rv"><div class="ico">❄️</div><h3>تحكم بالتبريد</h3><p>إدارة أنظمة التبريد حسب الحدود التي تحددها للبيوت المحمية.</p></div>
+<div class="card rv"><div class="ico">🔔</div><h3>تنبيهات فورية</h3><p>تعرف بانخفاض الرطوبة أو انقطاع جهاز قبل ما يحدث الضرر.</p></div>
+<div class="card rv"><div class="ico">⚙️</div><h3>إدارة الأجهزة</h3><p>شوف حالة كل جهاز، المتصل وغير المتصل، من التطبيق مباشرة.</p></div>
+<div class="card rv"><div class="ico">📶</div><h3>يشتغل حتى بدون إنترنت</h3><p>وحدات التحكم تنفذ المنطق محليًا، والإنترنت للمزامنة والمراقبة عن بُعد.</p></div>
+</div></div></section>
+
+<section id="irrigation" class="alt"><div class="wrap">
+<div class="head rv"><h2>💧 ري ذكي بثلاثة أوضاع</h2><p>كل منطقة تختار الوضع المناسب لمحصولها، ومعاها تحكم يدوي وقت الحاجة.</p></div>
+<div class="grid modes">
+<div class="card rv"><div class="n">1</div><div class="ico">🗓️</div><h3>الري بالجدولة</h3><p>حدد الأيام والأوقات ومدة التشغيل، والنظام ينفذ تلقائيًا.</p>
+<svg viewBox="0 0 200 90"><g fill="none" stroke="var(--g1)" stroke-width="3"><rect x="20" y="15" width="160" height="60" rx="12"/><path d="M20 38h160"/></g><g fill="var(--g1)"><circle cx="50" cy="56" r="6"/><circle cx="100" cy="56" r="6" opacity=".5"/><circle cx="150" cy="56" r="6"/></g></svg></div>
+<div class="card rv"><div class="n">2</div><div class="ico">🔍</div><h3>قرار يعتمد على الحساس</h3><p>في أوقات الفحص يقرأ النظام الرطوبة، ويروي فقط لو كانت أقل من الحد.</p>
+<svg viewBox="0 0 200 90"><path d="M20 70h160" stroke="var(--line)" stroke-width="3"/><path d="M20 30h160" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 5"/><path d="M20 55 C60 20 90 80 130 40 S170 50 180 45" fill="none" stroke="var(--g1)" stroke-width="3" stroke-dasharray="300" stroke-dashoffset="300" style="animation:dash 3s infinite alternate"/></svg></div>
+<div class="card rv"><div class="n">3</div><div class="ico">🤖</div><h3>أوتوماتيكي كامل</h3><p>مراقبة مستمرة؛ يبدأ الري عند الجفاف ويوقفه عند الوصول للمستوى المطلوب.</p>
+<svg viewBox="0 0 200 90"><rect x="30" y="10" width="140" height="70" rx="14" fill="none" stroke="var(--g1)" stroke-width="3"/><rect x="40" y="20" width="120" height="50" rx="8" fill="var(--g1)" opacity=".25"><animate attributeName="y" values="62;24;62" dur="5s" repeatCount="indefinite"/><animate attributeName="height" values="8;46;8" dur="5s" repeatCount="indefinite"/></rect></svg></div>
+</div></div></section>
+
+<section id="how"><div class="wrap">
+<div class="head rv"><h2>كيف تعمل المنظومة؟</h2><p>مزرعتك تتحول من أجهزة منفصلة إلى منظومة واحدة مترابطة.</p></div>
+<div class="flow rv">
+<div class="step"><span>📡</span>الحساسات</div><div class="arrow">◂</div>
+<div class="step"><span>🔌</span>وحدات التحكم ESP32</div><div class="arrow">◂</div>
+<div class="step"><span>📊</span>البيانات</div><div class="arrow">◂</div>
+<div class="step"><span>🗺️</span>مناطق المزرعة</div><div class="arrow">◂</div>
+<div class="step"><span>💦</span>الري والتبريد</div><div class="arrow">◂</div>
+<div class="step"><span>📱</span>تطبيقك</div>
+</div></div></section>
+
+<section class="alt"><div class="wrap field">
+<div class="rv"><span class="tag">🌐 العمل المحلي</span><h2 style="font-size:36px;margin-bottom:14px">الإنترنت للمراقبة، مش نقطة فشل</h2>
+<p style="color:var(--muted)">وحدات التحكم الميدانية تقرأ الحساسات باستمرار وتنفذ منطق التشغيل محليًا، فمزرعتك تواصل عملها حتى لو انقطع الاتصال، وعند رجوعه تتم مزامنة البيانات مع التطبيق.</p></div>
+<div class="rv"><svg viewBox="0 0 460 300" role="img" aria-label="رسم توضيحي لمزرعة">
+<circle cx="370" cy="60" r="34" fill="var(--lime)" opacity=".8"><animate attributeName="r" values="34;38;34" dur="4s" repeatCount="indefinite"/></circle>
+<path d="M0 230 Q120 190 230 220 T460 210 V300 H0Z" fill="var(--g1)" opacity=".25"/>
+<path d="M0 260 Q150 230 300 255 T460 245 V300 H0Z" fill="var(--g2)" opacity=".5"/>
+<g stroke="var(--g2)" stroke-width="2" opacity=".5"><path d="M30 275h400M20 290h420"/></g>
+<g class="plant"><path d="M90 250v-60" stroke="var(--g2)" stroke-width="4"/><path d="M90 210c-30-5-35-30-35-30 28-2 35 14 35 30zM90 195c30-5 35-30 35-30-28-2-35 14-35 30z" fill="var(--g1)"/></g>
+<g class="plant" style="animation-delay:1s"><path d="M200 255v-50" stroke="var(--g2)" stroke-width="4"/><path d="M200 225c-26-4-30-26-30-26 24-2 30 12 30 26zM200 212c26-4 30-26 30-26-24-2-30 12-30 26z" fill="var(--g1)"/></g>
+<g><rect x="290" y="170" width="70" height="55" rx="8" fill="var(--surface)" stroke="var(--g1)" stroke-width="3"/><path d="M290 170l35-30 35 30" fill="none" stroke="var(--g1)" stroke-width="3"/><circle cx="325" cy="198" r="8" fill="var(--g1)"><animate attributeName="opacity" values="1;.2;1" dur="1.5s" repeatCount="indefinite"/></circle></g>
+<g stroke="var(--g1)" stroke-width="2" fill="none" opacity=".8"><path d="M325 135a22 22 0 0 1 30 0"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></path><path d="M315 122a38 38 0 0 1 50 0"><animate attributeName="opacity" values="0;1;0" dur="2s" begin=".4s" repeatCount="indefinite"/></path></g>
+<g fill="#38bdf8"><circle cx="140" cy="140" r="4"><animate attributeName="cy" values="130;240" dur="2s" repeatCount="indefinite"/></circle><circle cx="150" cy="130" r="4"><animate attributeName="cy" values="120;240" dur="2.4s" repeatCount="indefinite"/></circle></g>
+</svg></div>
+</div></section>
+
+<section id="download"><div class="wrap">
+<div class="dl rv">
+<h2>جاهز تخلي مزرعتك أذكى؟</h2>
+<p>تطبيق GreenPulse قيد الاختبار حاليًا، وسيتوفر للتحميل قريبًا على المتاجر.</p>
+<div class="stores">
+<div class="store" aria-disabled="true"><i class="soon">قريبًا</i><span>🤖</span><div><small>حمّل من</small><b>Google Play</b></div></div>
+<div class="store" aria-disabled="true"><i class="soon">قريبًا</i><span>🍎</span><div><small>حمّل من</small><b>App Store</b></div></div>
+</div></div>
+</div></section>
+
+<footer><div class="wrap"><b>GreenPulse</b> — Your Farm, Smarter.<br>© 2026 جميع الحقوق محفوظة</div></footer>
+
+<script>
+(function(){
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(en){en.forEach(function(x,i){if(x.isIntersecting){setTimeout(function(){x.target.classList.add('in')},(i%3)*120);io.unobserve(x.target)}})},{threshold:.15});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
